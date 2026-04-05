@@ -1,0 +1,196 @@
+.members-section {
+  padding: 100px 20px;
+  background-color: #020617;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.members-bg-effects .glow-circle-top {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.directory-tag {
+  font-family: 'JetBrains Mono', monospace;
+  color: #38bdf8;
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'Bungee', sans-serif;
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #f8fafc;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: #38bdf8;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+/* Grid Configuration */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Member Card - Glassmorphism */
+.member-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: border 0.3s ease;
+}
+
+.member-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Neon Scanner Effect */
+.card-scanner {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(56, 189, 248, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.member-card:hover .card-scanner {
+  top: 100%;
+  transition: 0.8s ease-in-out;
+}
+
+/* Image Styling */
+.member-img-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  position: relative;
+  padding: 5px;
+  border: 2px solid transparent;
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+}
+
+.member-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(20%);
+}
+
+.faculty-badge {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #38bdf8;
+  color: #020617;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.member-info h3 {
+  font-size: 1.2rem;
+  color: #f1f5f9;
+  margin-bottom: 5px;
+}
+
+.member-role {
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+/* Corner Accents */
+.card-corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(56, 189, 248, 0.3);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-corner.tr { top: 15px; right: 15px; border-left: 0; border-bottom: 0; }
+.card-corner.bl { bottom: 15px; left: 15px; border-right: 0; border-top: 0; }
+
+.member-card:hover .card-corner { opacity: 1; }
+
+.member-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.member-card:hover .member-socials { opacity: 1; }
+
+.social-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-icon {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icon:hover { color: #38bdf8; transform: scale(1.2); }
+
+/* Faculty Highlight */
+.faculty-highlight {
+  grid-column: 1 / -1; /* Makes coordinator span full width on large screens */
+  max-width: 400px;
+  margin: 0 auto 40px;
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+@media (max-width: 768px) {
+  .faculty-highlight {
+    grid-column: span 1;
+  }
+}
